@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<title>Weatheria Map</title>
+	<link rel="shortcut icon" type="image/png" href='../Images/Favicon.png'>
+	<link rel="stylesheet" type="text/css" href="styles.css">	
+
+	<link rel="stylesheet" href="Hamburger.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+        
+    <!-- font-family -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+		}
+		
+		#mapid {
+			width: 100%;
+			height: 93%;
+		}
+	</style>
+	<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	crossorigin=""/> -->
+
+	<link rel="stylesheet" type="text/css" href="./lib/leaflet.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="map.css" media="screen"/>
+	
+	<script src="./lib/leaflet-src.js"></script>
+	<script src="./map.js"></script>
+
+	
+</head>
+<body>
+	<nav>
+    </nav>
+	    <div class="navbar">
+	        <div class="menu">
+	            <!-- <h3 class="logo">Weather <span> Forecast</span></h3> -->
+	            <h1 class="main-head"> <a href="../index.html"><span class="w">W</span>EATHERIA</a> </h1>
+	            <div class="weather-menu">
+	                <div class="bar">
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	<div class="container">
+
+        <div class="main-container">
+            <!-- Creating two layers behind main -->
+            <div id="mapid" class="main"></div>
+            <div class="shadow one"></div>
+            <div class="shadow two"></div>
+        </div>
+
+        <div class="links">
+            <div class="Hamburger">
+                <ul>
+                    <li>
+                        <a href="../index.html" style="--i:0.005s"><i class="fa fa-home">    Home</i></a>
+                    </li>
+                    <li>
+                        <a href="./map.html" style="--i:0.010s"><i class="fa fa-map-marker">    Map</i></a>
+                    </li>
+                    <li>
+                        <a href="../about/about.html" style="--i:0.035s"><i class="fa fa-user">    About</i></a>
+                    </li>
+                    <li>
+                        <a href="../contact/contact.html" style="--i:0.004s"><i class="fa fa-address-card">    Contact</i></a>
+                    </li>
+                </ul>
+				<footer>
+                    <div id="footer" class="copyright">
+						<hr class="line">
+                      &copy; 2022 - Designed by Dhruv Garg
+                    </div>
+                </footer>
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="weather.js"></script>
+	
+	<script>
+		initMap();
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

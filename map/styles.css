@@ -1,0 +1,513 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+html{
+    background: linear-gradient(135deg, #8dadd8 0%, #0b0235 74%);
+}
+
+body {
+    overflow: hidden; 
+    height: 100vh;
+    margin: 0;
+    font-family: 'roboto', sans-serif;
+    /* background: #222; */
+    /* background: linear-gradient(135deg, #8dadd8 0%, #0b0235 74%); */
+    background: linear-gradient(135deg, #99a36e 0%,  #1d3502 74%);
+    font-size: 120%;
+
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    /* background: linear-gradient(135deg, #8dadd8 0%, #0b0235 74%); */
+
+    /* background: linear-gradient(135deg, #99a36e 0%,  #1d3502 74%); */
+
+    /* background-color: #485461; */
+    /* background: linear-gradient(135deg, #70a7e2 0%, #021a35 74%); */
+    /* background-image: linear-gradient(135deg, #485461 0%, #28313b 74%); */
+    overflow: hidden;
+    /* overflow: scroll; */
+    transform-style: preserve-3d;
+}
+
+
+
+.navbar {
+    /* background-color: #485461; */
+    /* background: linear-gradient(135deg,#0b0235 0%, #8dadd8 74%); */
+    /* background: linear-gradient(135deg, #8dadd8 0%, #0b0235 74%); */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.menu {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+}
+
+
+.main-head a{
+    font-family:'Noto Serif', serif;
+    text-decoration: none;
+    font-size: 30px;
+    color: #621f1f;
+    
+
+}
+
+.main-head a:hover{
+    color: #363436f8;
+}
+
+.main-head a:visited{
+    color: #363436f8;
+    
+}
+
+.main-head a:active, a:focus {
+    color: #363436f8;
+  }
+
+
+.main-head .w{
+    /* font-family: 'Goblin One', cursive; */
+    color: #441c1c;
+    font-weight: 800;
+    font-size:50px;
+
+}
+
+
+
+
+
+.weather-menu{
+	z-index: 4;
+}
+
+h1.temp {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+
+/*.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+
+.weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: -32px;
+}*/
+
+#graph-loading{
+    position: relative;
+    left: 20px;
+}
+
+
+
+
+
+.logo {
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 4rem;
+}
+
+.logo span {
+    font-weight: 300;
+}
+
+
+/** Weather Menu bar**/
+
+.weather-menu {
+    height: 3rem;
+    width: 3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    /* background-color: black; */
+    justify-content: flex-end;
+}
+
+.bar {
+    width: 1.9rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: whitesmoke;
+    transition: 0.5s;
+    position: relative;
+}
+
+.bar::before,
+.bar::after {
+    content: "";
+    position: absolute;
+    width: 1.9rem;
+    height: 2px;
+    background-color: aliceblue;
+    transition: 0.5s;
+}
+
+.bar:before {
+    transform: translateY(-9px);
+}
+
+.bar:after {
+    transform: translateY(9px);
+}
+
+
+/* Mid written content */
+
+.main {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 5;
+    overflow: hidden;
+    /* To shift img towards left */
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+}
+
+header {
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    background: url("Images/mountainRiver.jpg") no-repeat top center / cover;
+    position: relative;
+}
+
+.overplay {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(43, 51, 59, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.mainpage{
+    position: relative;
+    overflow:auto;
+    width: 100%;
+    height: 2000px;
+    top: 0;
+    left: 0;
+    /* display: flex; */
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.toAlignCenter{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* background-color: rgba(43, 51, 59, 0.8); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner {
+    max-width: 90rem;
+    /* background-color: white; */
+    text-align: center;
+    color: aliceblue;
+    padding: 0 2rem;
+}
+
+.title {
+    font-size: 2.7rem;
+}
+
+
+/* Activity after bar click */
+
+.navbar.active .bar {
+    transform: rotate(360deg);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+/* To create X mark in active state */
+
+.navbar.active .bar:before {
+    transform: translateY(0) rotate(45deg);
+}
+
+.navbar.active .bar:after {
+    transform: translateY(0) rotate(-45deg);
+}
+
+
+/* To minimize the image on toggle active state
+    animations 
+*/
+
+.container.active .main {
+    animation: main-animation 0.5s ease-in-out;
+    transform: perspective(1300PX) rotateY(20deg) translateZ(310px) scale(0.5);
+}
+
+@keyframes main-animation {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: perspective(1300PX) rotateY(20deg) translateZ(310px) scale(0.5);
+    }
+}
+
+
+/* Links ......................................................................................................*/
+
+.links {
+    position: absolute;
+    width: 30%;
+    right: 0;
+    top: 0;
+    height: 93%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Styling of list ...............................................................................................*/
+
+ul {
+    list-style: none;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    padding: 0.7rem;
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: hide 0.5s forwards ease;
+}
+
+.links a:hover {
+    color: #C3C3C3;
+}
+
+.links #footer{
+    font-size: 13px;
+    color: #fcfcfc;
+    padding-left: 45px;
+}
+.links #footer .line {
+    height: 3px;
+    border-width: -3px;
+    /* color: cyan; */
+    background-color: #d5700f;
+    border-color: #d5700f;
+}
+
+
+
+/* Animations for activated link .......................................................................................*/
+
+.container.active .links a {
+    animation: appear 0.5s forwards ease var(--i);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes hide {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+
+/* Adding shadows ......................................................................................*/
+
+.shadow {
+    position: absolute;
+    width: 100%;
+    height: 93%;
+    /*top: 0;*/
+    left: 0;
+    background-color: white;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: 0.5s;
+}
+
+
+/* First Shadow --------------------------------*/
+
+.shadow.one {
+    z-index: -1;
+    opacity: 0.15;
+}
+
+.container.active .shadow.one {
+    animation: shadow-one 0.6s ease-out;
+    transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+}
+
+@keyframes shadow-one {
+    0% {
+        transform: translate(0);
+    }
+    5% {
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+    }
+    100% {
+        transform: perspective(1300px) rotateY(20deg) translateZ(215px) scale(0.5);
+    }
+}
+
+
+/* Second Shadow -----------------------------------*/
+
+.shadow.two {
+    z-index: -2;
+    opacity: 0.1;
+}
+
+.container.active .shadow.two {
+    animation: shadow-two 0.6s ease-out;
+    transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+}
+
+@keyframes shadow-two {
+    0% {
+        transform: translate(0);
+    }
+    5% {
+        transform: perspective(1300px) rotateY(20deg) translateZ(310px) scale(0.5);
+    }
+    100% {
+        transform: perspective(1300px) rotateY(20deg) translateZ(120px) scale(0.5);
+    }
+}
+
+
+/* To increase the translateZ() value of the (.main) element and first layer when we hover the (.main) element */
+
+.container.active .main:hover+.shadow.one {
+    transform: perspective(1300px) rotateY(20deg) translateZ(230px) scale(0.5);
+    ;
+}
+
+.container.active .main:hover {
+    transform: perspective(1300px) rotateY(20deg) translateZ(340px) scale(0.5);
+    ;
+}
+
+
+
+/* graph */
+#chartBase{
+    background: #000000d0;
+    display: none;
+    flex-direction: column;
+    border-: red;
+    align-items: center;
+
+}
+
+/* div to place the graph canvas */
+.chart-container{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* class for canvas of the graphs */
+.chart{
+    background-color: rgb(50, 50, 50); /* background color of the graph */ 
+    display: none; /* initially display set to none */
+}
+
+
+/* cloth setting  */
+.wish-img {
+    width: 0px;
+    height: 0px;
+}
+
+#wish-text {
+    font-size: 0px;
+    color: rgb(255, 255, 255);
+}
+
+#weather-cloth {
+    display: flex;
+}
+

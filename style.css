@@ -1,0 +1,114 @@
+*{
+    padding: 0;
+    margin:0;
+}
+
+/* body{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100vh;
+    width:100%;
+    background:rgb(39, 163, 204)
+} */
+
+.circle-outer{
+    width: 500px;
+    height:500px;
+}
+
+.circle{
+    background:linear-gradient(-45deg,#afd9e9 ,#3173ca ,#042f52 );
+    border-radius:50%;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position: relative;
+    opacity: 0.7;
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(4, 25, 53), 0 0 5px rgb(0, 56, 139);
+    box-shadow: 1px 1px 10px white, 0 0 25px white,0 0 25px white;
+}
+
+.content{
+    overflow: auto;
+    z-index: 10px;
+    border-radius:50%;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position: relative;
+}
+
+.circle:before {
+    content: "";
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    /* background:linear-gradient(-45deg,#9dd6ec 0%,#4cbce9 10%,#408adf 50%,#12568d 100%); */
+    background:linear-gradient(-45deg,#afd9e9 ,#3173ca ,#042f52 );
+    transform:rotateZ(45deg);
+    filter:blur(20px);
+}
+
+.circle:after {
+    content:"";
+    position: absolute;
+    width:90%;
+    height:65px;
+    background:rgba(0,0,0,0.450);
+    border-radius: 50%;
+    bottom:-50%;
+    filter:blur(20px);
+}
+
+.circle:hover::before{
+    /* transform:rotateZ(180deg); */
+    animation:rotation 6s ease-in-out;
+
+}
+
+@keyframes rotation {
+    0% {
+        background:linear-gradient(-45deg,#afd9e9 ,#3173ca ,#042f52 );
+        transform: rotateX(90deg);
+        transform: rotateZ(90deg);
+    }
+    10% {
+        
+        transform: rotateX(135deg);
+        transform: rotateZ(135deg);
+    }
+    20% {
+        background:linear-gradient(-90deg,#afd9e9 ,#3173ca ,#042f52 );
+        transform: rotateX(180deg);
+        transform: rotateZ(180deg);
+    }
+    30% {
+        transform: rotateX(225deg);
+        transform: rotateZ(225deg);
+    }
+    40% {
+        background:linear-gradient(-180deg,#afd9e9 ,#3173ca ,#042f52 );
+        transform: rotateX(270deg);
+        transform: rotateZ(270deg);
+    }
+    50% {
+        transform: rotateX(310deg);
+        transform: rotateZ(310deg);
+    }
+    60% {
+        background:linear-gradient(-270deg,#afd9e9 ,#3173ca ,#042f52 );
+        transform: rotateX(350deg);
+        transform: rotateZ(355deg);
+    }
+    100% {
+        background:linear-gradient(-360deg,#afd9e9 ,#3173ca ,#042f52 );
+        transform: rotateX(360deg);
+        transform: rotateZ(360deg);
+    }
+}

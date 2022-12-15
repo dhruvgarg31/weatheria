@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(238, 235, 229);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Hamburger {
+    position: absolute;
+    font-size: xx-large;
+    display: grid;
+    grid-gap: 35px;
+}
+ul {
+    list-style: none;
+}
+
+.Hamburger li {
+    height: 50px;
+    width: 100px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 6px;
+    color: #676767;
+    cursor: pointer;
+    margin: 20px;
+
+}
+.Hamburger i {
+    height: 60px;
+    width: 220px;
+    text-align: center;
+    line-height: 50px;
+    color: #97aaaf;
+    cursor: pointer;
+}
+
+.Hamburger i:hover {
+    box-shadow: -3px -3px 5px 0px #ffffffa6 inset,
+        3px 3px 5px 0px #8335354a inset;
+    padding-bottom:6px;
+    margin-left: 3px;
+    /*padding-bottom: 4px;*/
+}
+
+
+/* //dont touch */

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weatheria</title>
+    <link rel="shortcut icon" type="image/png" href='Images/Favicon.png'>
+    <!-- font-family -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./Hamburger.css">
+    <link rel="stylesheet" type="text/css" href="./loader.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" />
+
+    <!-- libraries -->
+    
+    <!-- jquery -->
+    <script type="text/javascript" src="./lib/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.ripples/0.5.3/jquery.ripples.min.js"></script>
+    
+
+    <!--  chartJS -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js" integrity="sha256-uVEHWRIr846/vAdLJeybWxjPNStREzOlqLMXjW/Saeo=" crossorigin="anonymous"></script>
+    
+    <!--  -->
+
+    <!-- scripts -->
+    <script src="./script.js" defer></script>
+  
+   
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="navbar">
+            <div class="menu">
+                <!-- <h3 class="logo">Weather <span> Forecast</span></h3> -->
+                <h1 class="main-head"> <a href="./index.html"><span class="w">W</span>EATHERIA</a> </h1>
+                <div class="weather-menu">
+                    <div class="bar">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-container">
+            <div class="main">
+                <header>
+                    <div class="overplay">
+                        <!-- through main oage we generate scrolling effect -->
+                        <div class="mainpage">
+                            <div class="toAlignCenter">
+                                
+                                <div id="wish">
+                                    <span id="wish-text" class="greeting"></span>
+                                </div>
+
+                                <div class="card">
+                                    <div class="search">
+                                        <input type="text" class="search-bar" placeholder="Enter your city">
+                                        <button><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                                                viewBox="0 0 1024 1024" height="1.5em" width="1.5em"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </div>
+
+                                    <div id="weather-cloth">
+                                    	<div id="loading-info"><div class="loader"></div></div>
+                                        <div class="weather loaded">
+                                            <h2 class="city"></h2>
+                                            <h1 class="temp"></h1>
+                                            <div class="flex">
+                                                <img class="icon" />
+                                                <div class="description"></div>
+                                            </div>
+                                            <div class="humidity"></div>
+                                            <div class="wind"></div>
+                                            <div class="wind-dir"></div>
+                                        </div>
+
+                                        <div class="clothing loaded">
+                                            <img id="wearing">
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <button style="width: 100px; border-radius: 30px;" id="ShowHide">More Details</button>
+                                        <br>
+                                        <span id="graph-loading" style="left: 30%;"></span>
+                                        <!-- <button style="width: 100px; border-radius: 0%;" class="show-btn">Show Details</button> -->
+            
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            <!-- graph  -->
+                            <div id="chartBase"></div>
+
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <!-- Creating two layers behind main -->
+            <div class="shadow one"></div>
+            <div class="shadow two"></div>
+        </div>
+        <div class="links">
+            <div class="Hamburger">
+                <ul>
+                    <li>
+                        <a href="./index.html" style="--i:0.005s"><i class="fa fa-home">    Home</i></a>
+                    </li>
+                    <li>
+                        <a href="./map/map.html" style="--i:0.010s"><i class="fa fa-map-marker">    Map</i></a>
+                    </li>
+                    <li>
+                        <a href="./about/about.html" style="--i:0.035s"><i class="fa fa-user">    About</i></a>
+                    </li>
+                    <li>
+                        <a href="./contact/contact.html" style="--i:0.004s"><i class="fa fa-address-card">    Contact</i></a>
+                    </li>
+                </ul>
+                <footer>
+                    <div id="footer" class="copyright">
+                        <hr class="line">
+                      &copy; 2022 - Designed by Dhruv Garg
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="weather.js"></script>
+    <script type="text/javascript">
+        setTimeout(
+            function () {
+                $(".wish-img").animate({
+                    height: '52px',
+                    width: '52px',
+                });
+
+                $("#wish-text").animate({
+                    fontSize: '65px',
+                });
+
+                $(".wish-img").animate({
+                	left: '10px',
+                });
+            }
+            , 1000);
+
+        let ele = document.getElementById("wish-text");
+        var day = new Date();
+        var hr = day.getHours();
+        let imgSrc = "";
+
+        let str = "";
+        if (hr >= 0 && hr < 12) {
+            str = "<b>Good Morning!</b>";
+            imgSrc = "./Images/Morning.png";
+        } else if (hr == 12) {
+            str = "Good Noon!";
+            imgSrc = "./Images/sleep.png"
+        } else if (hr >= 12 && hr <= 16) {
+            str = "<b>Good Afternoon!</b>";
+            imgSrc = "./Images/Study.png"
+        } else if (hr >= 16 && hr <= 20) {
+            str = "<b>Good Evening!</b>";
+            imgSrc = "./Images/Study.png"
+        } else {
+            str = "<b>Good Night!</b>";
+            imgSrc = "./Images/sleep.png"
+        }
+        ele.innerHTML = "<img style='transform: rotateY(180deg);' class='wish-img greeting' src=" + imgSrc + "> " + str + " <img class='wish-img greeting' src=" + imgSrc + ">";
+
+    </script>
+
+</body>
+
+</html>
